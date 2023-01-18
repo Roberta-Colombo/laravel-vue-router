@@ -3,6 +3,14 @@
   <router-view></router-view>
 </template>
 
-<script setup></script>
+<script>
+import AppHeader from "./components/HeaderComponent.vue";
+export default {
+  name: "App",
+  components: {
+    AppHeader,
+  },
+};
+</script>
 
 <style scoped></style>
