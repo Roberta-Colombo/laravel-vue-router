@@ -1,28 +1,29 @@
 <template>
-  <div class="card" style="width: 18rem">
+  <div class="card pb-5">
     <img
-      :src="`${store.imgPath}${project.image_1}`"
-      class="card-img-top"
-      :alt="project.title"
+      :src="`${store.img_path}${project.image_1}`"
+      class="card-img-top pb-5 scale"
+      :alt="project.name"
     />
     <div class="card-body">
-      <h5 class="card-title">{{ project.title }}</h5>
+      <h2 class="card-title pb-4">
+        {{ project.name }}
+      </h2>
       <p class="card-text">
-        {{ project.description }}
+        {{ truncateText }}
       </p>
 
       <router-link
-        class="btn btn-primary"
+        class="btn"
         :to="{ name: 'single-project', params: { slug: project.slug } }"
       >
-        See more
+        <strong>See more <i class="fa-solid fa-arrow-right ps-1"></i></strong>
       </router-link>
     </div>
   </div>
 </template>
 
 <script>
-import axios from "axios";
 import { store } from "../store";
 
 export default {
@@ -33,10 +34,50 @@ export default {
   data() {
     return {
       store,
-      contentMaxLen: 100,
+      textMaxLen: 150,
     };
+  },
+  computed: {
+    truncateText() {
+      if (this.project.description.length > this.textMaxLen) {
+        return this.project.description.substr(0, this.textMaxLen) + "...";
+      }
+      return this.project.description;
+    },
   },
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@use "../assets/styles/partials/variables" as *;
+.card {
+  border-style: none;
+}
+.card-img-top {
+  width: 600px;
+}
+
+.scale {
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(0.95);
+  }
+}
+
+.card-title {
+  font-size: 3rem;
+  min-height: 200px;
+}
+.btn {
+  padding: 0;
+
+  i {
+    vertical-align: middle;
+  }
+
+  &:hover {
+    color: $jumbo-blue;
+  }
+}
+</style>
