@@ -29,7 +29,6 @@ export default {
 //}
 
 .parallax {
-  // background-image: url("../assets/img/jumbo_bg.png");
   background-image: url("../assets/img/wall3.jpeg");
   height: 70vh;
   background-position: center;

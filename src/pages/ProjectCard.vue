@@ -55,6 +55,7 @@ export default {
 }
 .card-img-top {
   width: 600px;
+  height: 400px;
 }
 
 .scale {

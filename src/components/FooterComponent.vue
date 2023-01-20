@@ -1,7 +1,8 @@
 <template>
   <footer>
     <div>
-      <div class="container">
+      <div class="container d-flex justify-content-between align-items-center">
+        <div class="text small">Roberta Colombo &#169;2023</div>
         <div class="text">
           Follow me:
           <a href="#"><i class="fa-brands fa-linkedin px-3"></i></a>
@@ -25,6 +26,7 @@ footer {
   color: $white;
   background-color: $soft-black;
   height: 200px;
+  position: relative;
 
   a {
     color: $white;
@@ -37,8 +39,12 @@ footer {
 }
 
 .text {
-  text-align: right;
-  line-height: 200px;
   font-size: 1.3rem;
+  padding-top: 130px;
+  font-style: italic;
+}
+
+.small {
+  font-size: 1rem;
 }
 </style>
