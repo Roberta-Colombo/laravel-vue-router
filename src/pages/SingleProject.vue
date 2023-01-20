@@ -1,6 +1,5 @@
-h5
 <template>
-  <section v-if="project">
+  <section v-if="project" class="fade-in">
     <div class="main-img py-5">
       <img :src="`${store.img_path}${project.image_1}`" :alt="project.name" />
     </div>
@@ -11,7 +10,7 @@ h5
           <div v-if="project.project_type" class="py-4">
             <h5 class="py-2">Type:</h5>
             <div>
-              {{ project.project_type.type }}
+              <i>{{ project.project_type.type }}</i>
             </div>
           </div>
 
@@ -25,7 +24,7 @@ h5
               :key="index"
               class="py-1"
             >
-              {{ technology.name }}
+              <i>{{ technology.name }}</i>
             </div>
           </div>
         </div>
@@ -50,14 +49,14 @@ h5
   <section v-else>Loading...</section>
 
   <div class="parallax jumbo-txt d-flex justify-content-between">
-      <div class="left">
-        <router-link :to="{ name: 'projects' }">Go back</router-link>
-      </div>
-      <div class="right">
-        <a href="#">Discover random project</a>
-      </div>
-      <!-- da sistemare -->
-      <!-- <router-link :to= "{ name: 'single-project', params: {slug: getRandomSlug} }" > See random project </router-link> -->
+    <div class="left">
+      <router-link :to="{ name: 'projects' }">Go back</router-link>
+    </div>
+    <div class="right">
+      <a href="#">Discover random project</a>
+    </div>
+    <!-- da sistemare -->
+    <!-- <router-link :to= "{ name: 'single-project', params: {slug: getRandomSlug} }" > See random project </router-link> -->
   </div>
 </template>
 
@@ -99,9 +98,9 @@ export default {
   computed: {
     getRandomSlug() {
       const randSlug = Math.floor(Math.random() * this.slugs.length);
-       this.selectedSlug = this.slugs[randSlug];
+      this.selectedSlug = this.slugs[randSlug];
       console.log(this.selectedSlug);
-     },
+    },
   },
   mounted() {
     this.getProject();
@@ -123,8 +122,8 @@ h2 {
 }
 
 .proj-details {
-  padding-top: 4rem;
-  padding-bottom: 6rem;
+  padding-top: 7rem;
+  padding-bottom: 8rem;
 }
 
 p {
@@ -148,7 +147,7 @@ p {
   color: $white;
   font-weight: 600;
   // letter-spacing: 1rem;
-   -webkit-text-stroke: 1px rgb(236, 239, 243);
+  -webkit-text-stroke: 1px rgb(236, 239, 243);
 
   a {
     color: whitesmoke;

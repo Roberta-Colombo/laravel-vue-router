@@ -4,10 +4,15 @@
       :src="`${store.img_path}${project.image_1}`"
       class="card-img-top pb-5 scale"
       :alt="project.name"
+      @mouseover="hover = true"
+      @mouseleave="hover = false"
     />
     <div class="card-body">
-      <h2 class="card-title pb-4">
+      <h2 class="card-title pb-4" v-if="!hover">
         {{ project.name }}
+      </h2>
+      <h2 class="card-title pb-4" v-if="hover">
+        <i>{{ project.name }}</i>
       </h2>
       <p class="card-text">
         {{ truncateText }}
@@ -35,8 +40,15 @@ export default {
     return {
       store,
       textMaxLen: 150,
+      hover: false,
     };
   },
+  // methods: {
+  //   hoverEffect(){
+  //     const title = document.getElementsByClassName("card-title");
+
+  //   }
+  // };
   computed: {
     truncateText() {
       if (this.project.description.length > this.textMaxLen) {

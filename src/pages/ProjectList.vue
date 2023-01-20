@@ -1,6 +1,6 @@
 <template>
-  <div class="container">
-    <h1 class="py-5">Works</h1>
+  <div class="container fade-in">
+    <h1>Works</h1>
 
     <div class="row gx-5 gy-5">
       <div
@@ -45,5 +45,7 @@ export default {
 <style lang="scss" scoped>
 h1 {
   font-size: 5rem;
+  padding-top: 5rem;
+  padding-bottom: 8rem;
 }
 </style>
