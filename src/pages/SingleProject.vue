@@ -49,10 +49,10 @@
   <section v-else>Loading...</section>
 
   <div class="parallax jumbo-txt d-flex justify-content-between">
-    <div class="left">
+    <div class="left col-sm-6">
       <router-link :to="{ name: 'projects' }">Go back</router-link>
     </div>
-    <div class="right">
+    <div class="right col-6">
       <a href="#">Discover random project</a>
     </div>
     <!-- da sistemare -->
@@ -142,11 +142,8 @@ p {
 .jumbo-txt {
   line-height: 50vh;
   font-size: 2.5rem;
-  // color: rgb(238, 127, 229);
-  //color: rgb(18, 162, 240);
   color: $white;
   font-weight: 600;
-  // letter-spacing: 1rem;
   -webkit-text-stroke: 1px rgb(236, 239, 243);
 
   a {

@@ -11,8 +11,8 @@
           <a class="pe-3" href="#">Github</a><a href="#">Linkedin</a>
         </div>
       </div>
-      <div class="profile-pic col-12 col-md-6">
-        <div class="overlay">
+      <div class="profile-pic col-sm-12 col-md-6 mt-sm-5 ms-sm-auto">
+        <div class="frame">
           <img src="../assets/img/profile_bw.jpg" alt="Profile picture" />
         </div>
       </div>
@@ -51,7 +51,7 @@ h1 {
   }
 }
 
-.overlay {
+.frame {
   background-color: $jumbo-pink;
   position: absolute;
   top: 0;
